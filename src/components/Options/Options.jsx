@@ -1,9 +1,28 @@
-const Options = ({ onUpdateComments }) => {
+const Options = ({ onFeedbackClick, totalFeedback, onReset }) => {
   return (
     <>
-      <button onClick={onUpdateComments}>Good</button>
-      <button onClick={onUpdateComments}>Neutral</button>
-      <button onClick={onUpdateComments}>Bad</button>
+      <button
+        onClick={() => {
+          onFeedbackClick('good');
+        }}
+      >
+        Good
+      </button>
+      <button
+        onClick={() => {
+          onFeedbackClick('neutral');
+        }}
+      >
+        Neutral
+      </button>
+      <button
+        onClick={() => {
+          onFeedbackClick('bad');
+        }}
+      >
+        Bad
+      </button>
+      {totalFeedback > 0 && <button onClick={onReset}>Reset</button>}
     </>
   );
 };
