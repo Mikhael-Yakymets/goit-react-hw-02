@@ -1,6 +1,7 @@
 import Feedback from './Feedback/Feedback';
 import Options from './Options/Options';
 import Notification from './Notification/Notification';
+import Description from './Description/Description';
 import { useEffect, useState } from 'react';
 
 const App = () => {
@@ -37,13 +38,7 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <h1>Sip Happens Cafe</h1>
-        <p>
-          Please leave your feedback about our service by selecting one of the
-          options below
-        </p>
-      </div>
+      <Description />
       <Options
         onFeedbackClick={updateFeedback}
         totalFeedback={totalFeedback}
